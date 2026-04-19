@@ -1,1 +1,2 @@
 # EM-HW2-11424121
+求解過程：分離變數法這是一個一階線性微分方程，我們可以用分離變數法來求解：分離變數：將所有與 $T$ 有關的移到左邊，與 $t$ 有關的移到右邊：$$\frac{dT}{T - T_{env}} = -k \, dt$$兩邊積分：$$\int \frac{1}{T - T_{env}} d(T - T_{env}) = \int -k \, dt$$$$\ln|T - T_{env}| = -kt + C$$取指數：$$T - T_{env} = e^{-kt+C} = e^C \cdot e^{-kt}$$令 $e^C = A$（常數），則：$$T(t) = T_{env} + A e^{-kt}$$帶入初始條件：假設在 $t=0$ 時，CPU 溫度為 $T_0$：$$T_0 = T_{env} + A \cdot e^0 \implies A = T_0 - T_{env}$$最終通解：$$T(t) = T_{env} + (T_0 - T_{env})e^{-kt}$$
